@@ -1,0 +1,9 @@
+﻿<Project>
+  <ItemGroup>
+    <CompilerVisibleProperty Include="RootNamespace" />
+    <CompilerVisibleProperty Include="AssemblyName" />
+    <CompilerVisibleProperty Include="TargetFrameworkIdentifier" />
+    <CompilerVisibleProperty Include="TargetFrameworkMoniker" />
+    <CompilerVisibleProperty Include="TargetFrameworkVersion" />
+  </ItemGroup>
+</Project>
