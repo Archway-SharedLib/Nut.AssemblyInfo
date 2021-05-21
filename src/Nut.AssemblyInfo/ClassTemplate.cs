@@ -38,7 +38,7 @@ namespace Nut
     [CompilerGenerated]
     [GeneratedCode(""Nut.AssemblyInfo"", """);
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Model.Version));
-            this.Write("\")]\r\n    internal static class AssemblyInfo\r\n    {\r\n");
+            this.Write("\")]\r\n    internal static partial class AssemblyInfo\r\n    {\r\n");
  foreach(var prop in this.Model.BasicProperties) { 
             this.Write("        /// <summary>\r\n        /// ");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscXmlStr(prop.Key)));
@@ -52,7 +52,7 @@ namespace Nut
  } 
             this.Write("\r\n        [CompilerGenerated]\r\n        [GeneratedCode(\"Nut.AssemblyInfo\", \"");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Model.Version));
-            this.Write("\")]\r\n        public partial static class Metadata\r\n        {\r\n");
+            this.Write("\")]\r\n        public static partial class Metadata\r\n        {\r\n");
  foreach(var prop in this.Model.MetadataProperties) { 
             this.Write("            /// <summary>\r\n            /// ");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscXmlStr(prop.Key)));
@@ -67,7 +67,7 @@ namespace Nut
             this.Write("        }\r\n\r\n        [CompilerGenerated]\r\n        [GeneratedCode(\"Nut.AssemblyInf" +
                     "o\", \"");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Model.Version));
-            this.Write("\")]\r\n        public partial static class Project\r\n        {\r\n");
+            this.Write("\")]\r\n        public static partial class Project\r\n        {\r\n");
  foreach(var prop in this.Model.ProjectProperties) { 
             this.Write("            /// <summary>\r\n            /// ");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscXmlStr(prop.Key)));

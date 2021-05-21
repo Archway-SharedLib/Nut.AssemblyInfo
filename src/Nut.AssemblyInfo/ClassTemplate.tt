@@ -15,7 +15,7 @@ namespace Nut
 {
     [CompilerGenerated]
     [GeneratedCode("Nut.AssemblyInfo", "<#= this.Model.Version #>")]
-    internal static class AssemblyInfo
+    internal static partial class AssemblyInfo
     {
 <# foreach(var prop in this.Model.BasicProperties) { #>
         /// <summary>
@@ -26,7 +26,7 @@ namespace Nut
 
         [CompilerGenerated]
         [GeneratedCode("Nut.AssemblyInfo", "<#= this.Model.Version #>")]
-        public partial static class Metadata
+        public static partial class Metadata
         {
 <# foreach(var prop in this.Model.MetadataProperties) { #>
             /// <summary>
@@ -38,7 +38,7 @@ namespace Nut
 
         [CompilerGenerated]
         [GeneratedCode("Nut.AssemblyInfo", "<#= this.Model.Version #>")]
-        public partial static class Project
+        public static partial class Project
         {
 <# foreach(var prop in this.Model.ProjectProperties) { #>
             /// <summary>
