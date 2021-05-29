@@ -19,7 +19,7 @@
     <PackageLicenseExpression>https://github.com/Archway-SharedLib/Nut.AssemblyInfo/blob/main/LICENSE</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Archway-SharedLib/Nut.AssemblyInfo</PackageProjectUrl>
     <RepositoryType>GIT</RepositoryType>
-    <PackageId>Nut.AssemblyInfo</PackageId>
+    <PackageId>Nut.Info</PackageId>
     <RootNamespace>Nut.AssemblyInfo</RootNamespace>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <!--source link-->
@@ -46,10 +46,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="bin\Debug\netstandard2.0\\Nut.AssemblyInfo.dll" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
