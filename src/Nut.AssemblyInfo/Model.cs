@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace Nut.AssemblyInfo
 {
@@ -19,5 +17,7 @@ namespace Nut.AssemblyInfo
         public List<KeyValuePair<string, string>> MetadataProperties { get; } = new();
 
         public List<KeyValuePair<string, string>> ProjectProperties { get; } = new();
+
+        public bool WithoutAttribute { get; set; } = false;
     }
 }

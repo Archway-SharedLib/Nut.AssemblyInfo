@@ -1,83 +1,77 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>9</LangVersion>
-    <Nullable>enable</Nullable>
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
-    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <OutputType>library</OutputType>
-    <IsRoslynComponent>true</IsRoslynComponent>
+	  <TargetFramework>netstandard2.0</TargetFramework>
+	  <LangVersion>10</LangVersion>
+	  <Nullable>enable</Nullable>
+	  <NoWarn>$(NoWarn);CS1591</NoWarn>
+	  <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <IncludeBuildOutput>false</IncludeBuildOutput>
+	  <OutputType>library</OutputType>
+	  <IsRoslynComponent>true</IsRoslynComponent>
+
+	  <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+	  <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
-  <PropertyGroup>
-    <Authors>Archway</Authors>
-    <Description>A typed assembly and project information generator.</Description>
-    <Copyright>Copyright 2021 (c) Archway inc. All rights reserved.</Copyright>
-    <PackageTags>assembly generator</PackageTags>
-    <PackageLicenseExpression>https://github.com/Archway-SharedLib/Nut.AssemblyInfo/blob/main/LICENSE</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/Archway-SharedLib/Nut.AssemblyInfo</PackageProjectUrl>
-    <RepositoryType>GIT</RepositoryType>
-    <PackageId>Nut.AssemblyInfo</PackageId>
-    <RootNamespace>Nut.AssemblyInfo</RootNamespace>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <!--source link-->
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <!--<IncludeSymbols>true</IncludeSymbols>
+	<PropertyGroup>
+		<Authors>Archway</Authors>
+		<Description>A typed assembly and project information generator.</Description>
+		<Copyright>Copyright 2022 (c) Archway inc. All rights reserved.</Copyright>
+		<PackageTags>assembly generator</PackageTags>
+		<PackageLicenseExpression>https://github.com/Archway-SharedLib/Nut.AssemblyInfo/blob/main/LICENSE</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/Archway-SharedLib/Nut.AssemblyInfo</PackageProjectUrl>
+		<RepositoryType>GIT</RepositoryType>
+		<PackageId>Nut.AssemblyInfo</PackageId>
+		<RootNamespace>Nut.AssemblyInfo</RootNamespace>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<!--source link-->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<!--<IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>-->
-    <!--minver-->
-    <MinVerTagPrefix>v</MinVerTagPrefix>
-    <MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
-    <PackageIcon>logo_128.png</PackageIcon>
-    <RepositoryUrl>https://github.com/Archway-SharedLib/Nut.AssemblyInfo</RepositoryUrl>
-    <DevelopmentDependency>true</DevelopmentDependency>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.2.0" PrivateAssets="all" />
-
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="MinVer" Version="4.1.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\assets\logo\logo_128.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="ClassTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ClassTemplate.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="ClassTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ClassTemplate.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <Target Name="EmbedMetadaAssemblyAttributes" AfterTargets="MinVer">
-    <ItemGroup>
-      <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
-        <_Parameter1>ApplicationVersion</_Parameter1>
-        <_Parameter2>$(MinVerVersion)</_Parameter2>
-      </AssemblyAttribute>
-    </ItemGroup>
-  </Target>
+		<!--minver-->
+		<MinVerTagPrefix>v</MinVerTagPrefix>
+		<MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
+		<PackageIcon>logo_128.png</PackageIcon>
+		<RepositoryUrl>https://github.com/Archway-SharedLib/Nut.AssemblyInfo</RepositoryUrl>
+		<DevelopmentDependency>true</DevelopmentDependency>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Include="..\..\assets\logo\logo_128.png" Link="logo_128.png">
+	    <PackagePath></PackagePath>
+	    <Pack>True</Pack>
+	  </None>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" Pack="false" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="MinVer" Version="4.1.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="ClassTemplate.tt">
+	    <LastGenOutput>ClassTemplate.cs</LastGenOutput>
+	    <Generator>TextTemplatingFilePreprocessor</Generator>
+	  </None>
+	</ItemGroup>
+	<ItemGroup>
+	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="ClassTemplate.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ClassTemplate.tt</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+	</ItemGroup>
 </Project>

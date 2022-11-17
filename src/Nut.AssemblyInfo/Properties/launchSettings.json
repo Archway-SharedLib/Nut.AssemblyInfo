@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Nut.AssemblyInfo": {
+    "プロファイル 1": {
       "commandName": "DebugRoslynComponent",
       "targetProject": "..\\..\\sample\\Sample\\Sample.csproj"
     }

@@ -18,12 +18,14 @@ namespace Sample
             Console.WriteLine(Nut.AssemblyInfo.Product);
 
             Console.WriteLine(Nut.AssemblyInfo.Metadata.Sample);
+            Console.WriteLine(Nut.AssemblyInfo.Metadata.ApplicationVersion);
 
             Console.WriteLine(Nut.AssemblyInfo.Project.AssemblyName);
             Console.WriteLine(Nut.AssemblyInfo.Project.RootNamespace);
             Console.WriteLine(Nut.AssemblyInfo.Project.TargetFrameworkIdentifier);
             Console.WriteLine(Nut.AssemblyInfo.Project.TargetFrameworkMoniker);
             Console.WriteLine(Nut.AssemblyInfo.Project.TargetFrameworkVersion);
+
         }
     }
 }

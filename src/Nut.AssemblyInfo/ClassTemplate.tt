@@ -13,8 +13,10 @@ using System.CodeDom.Compiler;
 
 namespace Nut
 {
+<# if(!this.Model.WithoutAttribute) {#>
     [CompilerGenerated]
     [GeneratedCode("Nut.AssemblyInfo", "<#= this.Model.Version #>")]
+<# } #>
     internal static partial class AssemblyInfo
     {
 <# foreach(var prop in this.Model.BasicProperties) { #>
@@ -23,9 +25,10 @@ namespace Nut
         /// </summary>
         public const string <#= prop.Key #> = @"<#= this.EscStr(prop.Value) #>";
 <# } #>
-
+<# if(!this.Model.WithoutAttribute) {#>
         [CompilerGenerated]
         [GeneratedCode("Nut.AssemblyInfo", "<#= this.Model.Version #>")]
+<# } #>
         public static partial class Metadata
         {
 <# foreach(var prop in this.Model.MetadataProperties) { #>
@@ -35,9 +38,10 @@ namespace Nut
             public const string <#= prop.Key #> = @"<#= this.EscStr(prop.Value) #>";
 <# } #>
         }
-
+<# if(!this.Model.WithoutAttribute) {#>
         [CompilerGenerated]
         [GeneratedCode("Nut.AssemblyInfo", "<#= this.Model.Version #>")]
+<# } #>
         public static partial class Project
         {
 <# foreach(var prop in this.Model.ProjectProperties) { #>
