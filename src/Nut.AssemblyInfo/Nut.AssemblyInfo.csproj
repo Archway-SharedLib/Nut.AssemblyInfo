@@ -74,4 +74,13 @@
 	<ItemGroup>
 		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
 	</ItemGroup>
+	<Target Name="EmbedMetadaAssemblyAttributes" AfterTargets="MinVer">
+		<ItemGroup>
+			<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+				<_Parameter1>ApplicationVersion</_Parameter1>
+				<_Parameter2>$(MinVerVersion)</_Parameter2>
+			</AssemblyAttribute>
+		</ItemGroup>
+	</Target>
+
 </Project>
