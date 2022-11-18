@@ -5,5 +5,6 @@
     <CompilerVisibleProperty Include="TargetFrameworkIdentifier" />
     <CompilerVisibleProperty Include="TargetFrameworkMoniker" />
     <CompilerVisibleProperty Include="TargetFrameworkVersion" />
+	<CompilerVisibleProperty Include="NutAssemblyInfoExcludeMetadataNames" />
   </ItemGroup>
 </Project>

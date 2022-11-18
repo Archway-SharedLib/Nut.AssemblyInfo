@@ -12,12 +12,14 @@ namespace Nut.AssemblyInfo
 
         public string Version => version ?? string.Empty;
 
-        public List<KeyValuePair<string, string>> BasicProperties { get; } = new();
+        public List<ItemModel> BasicProperties { get; } = new();
 
-        public List<KeyValuePair<string, string>> MetadataProperties { get; } = new();
+        public List<ItemModel> MetadataProperties { get; } = new();
 
-        public List<KeyValuePair<string, string>> ProjectProperties { get; } = new();
+        public List<ItemModel> ProjectProperties { get; } = new();
 
         public bool WithoutAttribute { get; set; } = false;
     }
+
+    public record ItemModel(string Key, string Value, string CSharpPropertyName);
 }

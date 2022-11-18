@@ -37,10 +37,10 @@ namespace Nut.AssemblyInfo
  foreach(var prop in this.Model.BasicProperties) { 
             this.Write("        /// <summary>\r\n        /// ");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscXmlStr(prop.Key)));
-            this.Write(" == ");
+            this.Write(" = ");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscXmlStr(prop.Value)));
             this.Write("\r\n        /// </summary>\r\n        public const string ");
-            this.Write(this.ToStringHelper.ToStringWithCulture(prop.Key));
+            this.Write(this.ToStringHelper.ToStringWithCulture(prop.CSharpPropertyName));
             this.Write(" = @\"");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscStr(prop.Value)));
             this.Write("\";\r\n");
@@ -54,10 +54,10 @@ namespace Nut.AssemblyInfo
  foreach(var prop in this.Model.MetadataProperties) { 
             this.Write("            /// <summary>\r\n            /// ");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscXmlStr(prop.Key)));
-            this.Write(" == ");
+            this.Write(" = ");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscXmlStr(prop.Value)));
             this.Write("\r\n            /// </summary>\r\n            public const string ");
-            this.Write(this.ToStringHelper.ToStringWithCulture(prop.Key));
+            this.Write(this.ToStringHelper.ToStringWithCulture(prop.CSharpPropertyName));
             this.Write(" = @\"");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscStr(prop.Value)));
             this.Write("\";\r\n");
@@ -72,10 +72,10 @@ namespace Nut.AssemblyInfo
  foreach(var prop in this.Model.ProjectProperties) { 
             this.Write("            /// <summary>\r\n            /// ");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscXmlStr(prop.Key)));
-            this.Write(" == ");
+            this.Write(" = ");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscXmlStr(prop.Value)));
             this.Write("\r\n            /// </summary>\r\n            public const string ");
-            this.Write(this.ToStringHelper.ToStringWithCulture(prop.Key));
+            this.Write(this.ToStringHelper.ToStringWithCulture(prop.CSharpPropertyName));
             this.Write(" = @\"");
             this.Write(this.ToStringHelper.ToStringWithCulture(this.EscStr(prop.Value)));
             this.Write("\";\r\n");

@@ -21,9 +21,9 @@ namespace Nut
     {
 <# foreach(var prop in this.Model.BasicProperties) { #>
         /// <summary>
-        /// <#= this.EscXmlStr(prop.Key) #> == <#= this.EscXmlStr(prop.Value) #>
+        /// <#= this.EscXmlStr(prop.Key) #> = <#= this.EscXmlStr(prop.Value) #>
         /// </summary>
-        public const string <#= prop.Key #> = @"<#= this.EscStr(prop.Value) #>";
+        public const string <#= prop.CSharpPropertyName #> = @"<#= this.EscStr(prop.Value) #>";
 <# } #>
 <# if(!this.Model.WithoutAttribute) {#>
         [CompilerGenerated]
@@ -33,9 +33,9 @@ namespace Nut
         {
 <# foreach(var prop in this.Model.MetadataProperties) { #>
             /// <summary>
-            /// <#= this.EscXmlStr(prop.Key) #> == <#= this.EscXmlStr(prop.Value) #>
+            /// <#= this.EscXmlStr(prop.Key) #> = <#= this.EscXmlStr(prop.Value) #>
             /// </summary>
-            public const string <#= prop.Key #> = @"<#= this.EscStr(prop.Value) #>";
+            public const string <#= prop.CSharpPropertyName #> = @"<#= this.EscStr(prop.Value) #>";
 <# } #>
         }
 <# if(!this.Model.WithoutAttribute) {#>
@@ -46,9 +46,9 @@ namespace Nut
         {
 <# foreach(var prop in this.Model.ProjectProperties) { #>
             /// <summary>
-            /// <#= this.EscXmlStr(prop.Key) #> == <#= this.EscXmlStr(prop.Value) #>
+            /// <#= this.EscXmlStr(prop.Key) #> = <#= this.EscXmlStr(prop.Value) #>
             /// </summary>
-            public const string <#= prop.Key #> = @"<#= this.EscStr(prop.Value) #>";
+            public const string <#= prop.CSharpPropertyName #> = @"<#= this.EscStr(prop.Value) #>";
 <# } #>
         }
     }

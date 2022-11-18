@@ -7,6 +7,10 @@
 	<LangVersion>10</LangVersion>
   </PropertyGroup>
 
+	<PropertyGroup>
+		<NutAssemblyInfoExcludeMetadataNames>Exclude.Metadata, Metadata_Ignore</NutAssemblyInfoExcludeMetadataNames>
+	</PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\src\Nut.AssemblyInfo\Nut.AssemblyInfo.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
@@ -19,6 +23,14 @@
     <_Parameter1>ApplicationVersion</_Parameter1>
     <_Parameter2>999.999.999</_Parameter2>
   </AssemblyAttribute>
+	<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+		<_Parameter1>Exclude.Metadata</_Parameter1>
+		<_Parameter2>Foo\bar\baz</_Parameter2>
+	</AssemblyAttribute>
+	<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+		<_Parameter1>Metadata_Ignore</_Parameter1>
+		<_Parameter2>Ignore!</_Parameter2>
+	</AssemblyAttribute>
 </ItemGroup>
 </Project>
 

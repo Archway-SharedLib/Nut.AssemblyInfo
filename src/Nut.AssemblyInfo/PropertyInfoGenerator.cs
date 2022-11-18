@@ -38,7 +38,8 @@ namespace Nut.AssemblyInfo
             var model = new Model();
             model.WithoutAttribute = true;
 
-            model.ProjectProperties.AddRange(attributes);
+            model.ProjectProperties.AddRange(attributes
+                                    .Select(i => new ItemModel(i.Key, i.Value, i.Key)));
             var template = new ClassTemplate() { Model = model };
             var source = template.TransformText();
 
